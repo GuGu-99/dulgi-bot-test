@@ -3,7 +3,14 @@ from flask import Flask
 from threading import Thread
 from config import KST
 
-BASE_PATH = "/opt/render/project/data"
+import os
+
+# Render 무료 플랜은 Disk 없음 → 자동으로 /tmp 폴더 사용
+if os.path.exists("/opt/render/project/data"):
+    BASE_PATH = "/opt/render/project/data"   # Pro 플랜 또는 Disk 있는 경우
+else:
+    BASE_PATH = "/tmp"                       # Starter 무료 플랜 자동 대응
+
 os.makedirs(BASE_PATH, exist_ok=True)
 DATA_FILE = os.path.join(BASE_PATH, "data.json")
 BACKUP_FILE = os.path.join(BASE_PATH, "data_backup.json")
