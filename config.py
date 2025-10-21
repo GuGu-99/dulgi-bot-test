@@ -4,8 +4,8 @@ import pytz
 KST = pytz.timezone("Asia/Seoul")
 
 # 서버 관련 설정
-SERVER_URL = "https://discord.com/channels/1310854848442269767"
-BACKUP_CHANNEL_ID = 1427608696547967026
+SERVER_URL = "https://discord.com/channels/1430160519226196143"
+BACKUP_CHANNEL_ID = 1430160522984296609
 
 # 점수 기준
 DAILY_GOAL_POINTS = 10
